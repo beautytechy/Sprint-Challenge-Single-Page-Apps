@@ -3,42 +3,51 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
-const Character = (props) => {
-  
-  const id = props.match.params.id;
-  const [character, setCharacter] = useState({});
-  
-  console.log(props)
-  useEffect(() => {
-
-
-    axios
-      .get(`https://rickandmortyapi.com/api/character/${id}`)
-      .then(response => {
-        setCharacter(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-
-  }, [id]);
-
-  const { name, species, status } = character;
-  return (
-
-    <div>
-      <h2>{name}</h2>
-      <div>
-        Species: <em>{species}</em>
-      </div>
-      <div>
-        Status: <strong>{status}</strong>
-      </div>
-    </div>
-
-
-  );
+export default function Character (props)  {
+return (
+<div key={props.index}>
+<h1>Main Characters: {props.name}</h1>
+</div>
+)
 }
 
-// <Link to="/"><div>Home</div></Link>
-export default Character
+// const [characters, setCharacter] = useState([]);
+//   useEffect (() => {
+// const getCharacters = () => {
+//   axios
+//   .get('https://rickandmortyapi.com/api/character/}').then(response => {
+//     setCharacter(response.data);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
+// }
+// getCharacters();
+// },[]);
+
+    
+// return (
+//   <div>
+//     {characters.map(item => (
+
+//       <CharacterDetails key={item} item={Character} />
+//     ))}
+//   </div>
+// );
+// }
+
+// function CharacterDetails({ item }) {
+// console.log(item)
+// const { name, species, status } = item;
+// return (
+
+  
+//   <div>
+//     <h2>Name: {name}</h2>
+//     <div>
+//       Species: <em>{species}</em>
+//     </div>
+//   </div>
+
+// );
+// }

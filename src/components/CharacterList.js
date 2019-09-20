@@ -10,24 +10,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <div>
-        {characterInfo.map(info => {
-          console.log(info);
-          return (
-            <CharacterCard
-              key={info.index}
-              name={info.name}
-              species={info.species}
-              status={info.status}
-            />
-
-
-          )
-        })
-        }
-        <Route exact path="/" component={WelcomePage} />
-        <Route path="/character/:id" component={Character} />
-      </div>
+   
     </section>
   );
 }

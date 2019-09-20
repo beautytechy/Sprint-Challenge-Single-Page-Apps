@@ -8,14 +8,14 @@ export default function WelcomePage() {
     <section className="welcome-page">
       <header>
         <h1>Welcome to the ultimate fan site!</h1>
-        <Link to={`/character:id`}>
+        <Link to={`/character`}>
           <img
           className="main-img"
           src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
           alt="rick"
         />
         </Link>
-        <Route path='/character:id' component={Character} />
+        <Route path='/character' component={Character} />
       </header>
     </section>
   );
