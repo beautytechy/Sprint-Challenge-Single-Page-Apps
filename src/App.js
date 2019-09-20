@@ -1,7 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header.js";
-import axios from "../node_modules/axios"
-import CharacterCard from "./components/CharacterCard"
+import axios from "../node_modules/axios";
+import CharacterCard from "./components/CharacterCard";
+import { Route } from "react-router-dom";
+import WelcomePage from "./components/WelcomePage";
+import Character from "./components/Character";
+// import SearchForm from "./components/SearchForm"
 
 
 
@@ -15,7 +19,7 @@ export default function App() {
         const characterInfo = response.data.results;
         console.log(response);
         setCharacterInfo(characterInfo);
-       
+
       })
       .catch(error => {
         console.log("API data was not returned", error);
@@ -24,22 +28,12 @@ export default function App() {
   return (
     <main>
       <Header />
-  
+      <WelcomePage />
+      {/* <SearchForm /> */}
+      <CharacterCard />
 
-<div>
-{characterInfo.map(info => {
-  console.log(info);
-  return (
-    <CharacterCard
-      key={info.index}
-      name={info.name}
-      species={info.species}
-      status={info.status}
-    />
-    )
-  })
-}
-</div>
-</main>
+
+      
+    </main>
   )
 }

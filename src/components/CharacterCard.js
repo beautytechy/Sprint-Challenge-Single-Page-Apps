@@ -1,12 +1,16 @@
 import React from "react";
+import styled from 'styled-components';
+
+const BlueH1 = styled.h1`
+color: blue;
+font-size: 1.5 rem;
+`;
 
 export default function CharacterCard(props) {
   
-    console.log(props)
   return <span key={props.index}>
-    <h1>{props.name}</h1>
+    <BlueH1>{props.name}</BlueH1>
     <p>{props.species}</p>
     <p>{props.status}</p>
-   
   </span>;
 }
